@@ -21,6 +21,7 @@ public class CommunicateHub : Hub
 
 
 
+
     // # ADMIN ONLY!
 
     public Task FetchActiveCons(string conId)
