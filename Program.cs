@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using ScalaxServer.Hubs;
 
 
+File.CreateText(Environment.CurrentDirectory + "active_cons.txt");
+
+
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
