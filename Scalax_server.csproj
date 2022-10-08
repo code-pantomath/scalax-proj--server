@@ -14,5 +14,10 @@
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
+  
+  <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
+    <Copy SourceFiles="active_cons.txt" DestinationFolder="$(PublishDir)" />
+    <Copy SourceFiles="active_tks.txt" DestinationFolder="$(PublishDir)" />
+  </Target>
 
 </Project>
