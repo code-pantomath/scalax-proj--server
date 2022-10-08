@@ -50,7 +50,7 @@ app.UseRouting();
 
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(CONSTANTS.WWWROOT_DIR_PATH),
+    FileProvider = new PhysicalFileProvider("app/heroku_output/Scalax_server/wwwroot/"),
 });
 
 
