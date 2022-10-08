@@ -53,10 +53,10 @@ app.Use(async (ctx, next) => {
     await next.Invoke();
 });
 
-// app.UseStaticFiles(new StaticFileOptions
-// {
-//     FileProvider = new PhysicalFileProvider("app/heroku_output/Scalax_server/wwwroot/"),
-// });
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider("/app/wwwroot/"),
+});
 
 
 app.UseEndpoints(eps =>
