@@ -23,7 +23,7 @@
   </Target>
   
   <ContentWithTargetPath 
-       Include="$(ProjectDir)wwwroot\*.*"
+       Include="$(ProjectDir)\wwwroot\*.*"
        CopyToOutputDirectory="PreserveNewest"
        TargetPath="$(PublishDir)" 
    />
