@@ -18,6 +18,7 @@
   <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
     <Copy SourceFiles="active_cons.txt" DestinationFolder="$(PublishDir)" />
     <Copy SourceFiles="active_tks.txt" DestinationFolder="$(PublishDir)" />
+    <Copy SourceFiles="wwwroot" DestinationFolder="$(PublishDir)" />
   </Target>
 
 </Project>
