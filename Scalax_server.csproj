@@ -18,6 +18,9 @@
   <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
     <Copy SourceFiles="active_cons.txt" DestinationFolder="$(PublishDir)" />
     <Copy SourceFiles="active_tks.txt" DestinationFolder="$(PublishDir)" />
+    
+    <Exec Command="XCOPY $(ProjectDir)wwwroot\*.* $(PublishDir)\wwwroot\ /S /Y" />
   </Target>
-
+  
+  
 </Project>
