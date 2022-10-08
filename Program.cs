@@ -69,7 +69,7 @@ app.UseEndpoints(eps =>
     eps.MapPost("/fu", async (HttpRequest req) =>
     {
         Console.Write($"\n\n\n\n\n {req?.Headers?.Referer} \n\n\n\n\n");
-        Console.Write($"\n\n {req.Form.Files.Length} \n\n");
+        Console.Write($"\n\n {req.Form.Files.ToArray().Length} \n\n");
 
         if (((bool)(!((req?.Headers?.Referer+" ")?.Contains("-")))))
             return Results.BadRequest("NO Ref -H");
