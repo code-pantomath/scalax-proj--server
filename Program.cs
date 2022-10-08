@@ -48,7 +48,7 @@ var app = builder.Build();
 //app.UseStaticFiles();
 app.UseRouting();
 
-app.use(async (ctx, next) => {
+app.Use(async (ctx, next) => {
     Console.Write($"\n\n\n\n root:: {Environment.ProcessPath} \n\n\n\n");
     await next.Invoke();
 });
