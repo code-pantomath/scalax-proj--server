@@ -50,7 +50,7 @@ app.UseRouting();
 
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider("wwwroot\"),
+    FileProvider = new PhysicalFileProvider(CONSTANTS.WWWROOT_DIR_PATH),
 });
 
 
