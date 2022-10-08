@@ -15,18 +15,16 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   
+  <ItemGroup>
+    <Content Include="wwwroot\" CopyToPublishDirectory="PreserveNewest" Link="$(PublishDir)" />
+  </ItemGroup>
+  
   <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
     <Copy SourceFiles="active_cons.txt" DestinationFolder="$(PublishDir)" />
     <Copy SourceFiles="active_tks.txt" DestinationFolder="$(PublishDir)" />
     
 <!--     <Exec Command="XCOPY $(ProjectDir)wwwroot\*.* $(PublishDir)\wwwroot\ /S /Y" /> -->
   </Target>
-  
-  <ContentWithTargetPath 
-       Include="$(ProjectDir)\wwwroot\*.*"
-       CopyToOutputDirectory="PreserveNewest"
-       TargetPath="$(PublishDir)" 
-   />
   
   
 </Project>
