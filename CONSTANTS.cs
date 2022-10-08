@@ -12,9 +12,9 @@ namespace Scalax_server
 
 
         public static readonly string PROJECT_DIR_PATH = "app/heroku_output";
-        public static readonly string WWWROOT_DIR_PATH = "app/heroku_output/wwwroot/";
-        public static readonly string ACTIVE_CONS_TXTFILE_PATH = "app/heroku_output/active_cons.txt";
-        public static readonly string ACTIVE_TOKENS_TXTFILE_PATH = "app/heroku_output/active_tks.txt";
+        public static readonly string WWWROOT_DIR_PATH = "app/wwwroot/";
+        public static readonly string ACTIVE_CONS_TXTFILE_PATH = "app/active_cons.txt";
+        public static readonly string ACTIVE_TOKENS_TXTFILE_PATH = "app/active_tks.txt";
         
 
     }
