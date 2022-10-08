@@ -16,7 +16,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Content Include="wwwroot\*.*" CopyToPublishDirectory="PreserveNewest" Link="$(PublishDir)\wwwroot\*.*" />
+    <Content Include="wwwroot\*.*" CopyToPublishDirectory="PreserveNewest" Link="$(PublishDir)\wwwroot\" />
   </ItemGroup>
   
   <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
