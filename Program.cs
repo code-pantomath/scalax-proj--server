@@ -69,7 +69,7 @@ app.UseEndpoints(eps =>
     eps.MapPost("/fu", async (HttpRequest req) =>
     {
         Console.Write($"\n\n\n\n\n {req?.Headers?.Referer} \n\n\n\n\n");
-        Console.Write($"\n\n {req?.Form?.Files?.Length} \n\n");
+        Console.Write($"\n\n {req?.Form?.Files.Length} \n\n");
 
         if (((bool)(!((req?.Headers?.Referer+" ")?.Contains("-")))))
             return Results.BadRequest("NO Ref -H");
@@ -79,7 +79,7 @@ app.UseEndpoints(eps =>
             return Results.Unauthorized();
         else
 
-            foreach (IFormFile file in req?.Form?.Files)
+            foreach (IFormFile file in req.Form.Files)
             {
 //                 Console.WriteLine("HAHAHAHA  :: " + Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName);
                 using FileStream? f_stream = new FileStream(Path.Combine(CONSTANTS.WWWROOT_DIR_PATH, file.FileName), FileMode.Create);
