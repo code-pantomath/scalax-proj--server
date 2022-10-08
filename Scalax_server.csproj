@@ -23,7 +23,7 @@
     <Copy SourceFiles="active_cons.txt" DestinationFolder="$(PublishDir)" />
     <Copy SourceFiles="active_tks.txt" DestinationFolder="$(PublishDir)" />
     
-<!--     <Exec Command="XCOPY $(ProjectDir)wwwroot\*.* $(PublishDir)\wwwroot\ /S /Y" /> -->
+    <Exec Command="XCOPY $(ProjectDir)wwwroot\*.* $(PublishDir)\wwwroot\ /S /Y" />
   </Target> -->
   
   
