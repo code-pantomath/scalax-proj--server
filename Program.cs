@@ -57,6 +57,8 @@ app.UseStaticFiles(new StaticFileOptions
 app.UseEndpoints(eps =>
 {
     eps.MapHub<CommunicateHub>("/Hubs/Communicate");
+    
+    eps.MapGet("/", () => Results.Ok(new { ok = true, }));
 
 
     eps.MapPost("/fu", async (HttpRequest req) =>
