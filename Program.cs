@@ -48,10 +48,15 @@ var app = builder.Build();
 //app.UseStaticFiles();
 app.UseRouting();
 
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider("app/heroku_output/Scalax_server/wwwroot/"),
+app.use(async (ctx, next) => {
+    Console.Write($"\n\n\n\n root:: {Environment.ProcessPath} \n\n\n\n");
+    await next.Invoke();
 });
+
+// app.UseStaticFiles(new StaticFileOptions
+// {
+//     FileProvider = new PhysicalFileProvider("app/heroku_output/Scalax_server/wwwroot/"),
+// });
 
 
 app.UseEndpoints(eps =>
