@@ -8,7 +8,7 @@ namespace Scalax_server
 {
     internal class CONSTANTS
     {
-        public static readonly string SERVER_ENDPOINT_URL = "https://scalax-server-01.herokuapp.com";
+        public static readonly string SERVER_ENDPOINT_URL = "https://site--scalax-server-01--n5gfpf86nbvs.code.run";
 
 
         public static readonly string PROJECT_DIR_PATH = "/app/heroku_output";
