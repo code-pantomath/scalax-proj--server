@@ -9,9 +9,6 @@ using Scalax_server;
 using ScalaxServer.Hubs;
 
 
-//File.CreateText(Environment.CurrentDirectory + "active_cons.txt");
-
-
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
@@ -25,20 +22,6 @@ builder.Services.AddResponseCompression(opts =>
 });
 
 builder.Services.AddSignalR();
-
-//builder.Services.AddMvc(options =>
-//{
-//    options.AllowEmptyInputInBodyModelBinding = true;
-//    foreach (var formatter in options.InputFormatters)
-//    {
-//        if (formatter.GetType() == typeof(SystemTextJsonInputFormatter))
-//            ((SystemTextJsonInputFormatter)formatter).SupportedMediaTypes.Add(
-//            Microsoft.Net.Http.Headers.MediaTypeHeaderValue.Parse("text/plain"));
-//    }
-//}).AddJsonOptions(options =>
-//{
-//    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
-//});
 
 
 var app = builder.Build();
@@ -68,7 +51,7 @@ app.UseEndpoints(eps =>
 
     eps.MapPost("/fu", async (HttpRequest req) =>
     {
-        Console.Write($"\n\n\n\n\n {req?.Headers?.Referer} \n\n\n\n\n");
+        Console.Write($"\n\n {req?.Headers?.Referer} \n\n");
         Console.Write($"\n\n {req.Form.Files.ToArray().Length} \n\n");
 
         if (((bool)(!((req?.Headers?.Referer+" ")?.Contains("-")))))
@@ -81,7 +64,6 @@ app.UseEndpoints(eps =>
 
             foreach (IFormFile file in req.Form.Files)
             {
-//                 Console.WriteLine("HAHAHAHA  :: " + Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName);
                 using FileStream? f_stream = new FileStream(Path.Combine(CONSTANTS.WWWROOT_DIR_PATH, file.FileName), FileMode.Create);
                 await file.CopyToAsync(f_stream);
             }
@@ -96,13 +78,6 @@ app.UseEndpoints(eps =>
 
 
 });
-
-
-
-
-//app.MapBlazorHub();
-//app.MapHub<CommunicateHub>("/Hubs/Communicate");
-//app.MapFallbackToPage("/_Host");
 
 
 app.Run();
