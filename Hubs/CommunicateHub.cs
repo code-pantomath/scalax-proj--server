@@ -18,13 +18,11 @@ public class CommunicateHub : Hub
 
 
 
-
     // # ADMIN ONLY!
 
     public Task FetchActiveCons(string conId)
     {
         Console.Write("\n\n FETCHED DATA. \n\n");
-        //string adminId = (File.ReadAllText(activeConsDataPath).Split(';').ToList().Find(conId => conId.Contains("-a-"))).Replace("-a-", "");
         string txt = File.ReadAllText(CONSTANTS.ACTIVE_CONS_TXTFILE_PATH.Replace(";", "\n"));
         return Clients.Client(conId).SendAsync("GetActiveCons", txt);
     }
@@ -75,11 +73,5 @@ public class CommunicateHub : Hub
     }
 
 
-
-
-    //public Task SendCmd(string sender, string cmd)
-    //{
-    //    return Clients.All.SendAsync("GetCmd", cmd);
-    //}
 }
 
